@@ -1,6 +1,6 @@
 // Plik: Pharmacy.h
 // Autor: 
-// Data: 
+// Data: 18.11.2024
 // Opis: Definicja klasy Pharmacy, która przechowuje koszt 5 leków, oraz zmienia koszt leczenia w PatientAccount.
 
 #pragma once
@@ -9,14 +9,15 @@
 
 #include <iostream>
 #include <vector>
+#include <unordered_map>
 
 #include "PatientAccount.h"
+
 using namespace std;
 
 class Pharmacy {
 private:
-    string password; // haslo do szpitala, aby dodawac zabiegi
-    vector<PatientAccount> patients;
+
 
 public:
 

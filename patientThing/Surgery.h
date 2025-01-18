@@ -1,6 +1,6 @@
 // Plik: Surgery.h
 // Autor: 
-// Data: 
+// Data: 18.11.2024
 // Opis: Definicja klasy Surgery, która przechowuje 5 zabiegów chirurgicznych oraz zmienia koszt leczenia przechowywany w PatientAccount.
 
 #pragma once

@@ -1,6 +1,6 @@
 // Plik: PatientAccount.h
 // Autor: 
-// Data: 
+// Data: 18.11.2024
 // Opis: Definicja klasy PatientAccount, która przechowuje dane dotycz¹ce kosztów leczenia pacjenta. 
 
 #pragma once
@@ -11,11 +11,14 @@
 // Konto pacjenta
 class PatientAccount {
 private:
-    double totalCost; // koszt leczenia
+    double totalCost; // ca³kowity koszt leczenia
     int totalDays;
 
 public:
+    // dzienny koszt leczenia (inicjalizowany w pliku PatientAccount.cpp)
     static int DAILY_COST;
 
     void updateTotalCost(double amount);
+
+    void showTotalCost();
 };

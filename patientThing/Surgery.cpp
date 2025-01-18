@@ -1,6 +1,6 @@
 // Plik: Surgery.cpp
 // Autor: 
-// Data: 
+// Data: 18.11.2024
 // Opis: Rozwiniêcie funkcji klasy Surgery, która przechowuje 5 zabiegów chirurgicznych oraz zmienia koszt leczenia przechowywany w PatientAccount.
 
 #include "Surgery.h"

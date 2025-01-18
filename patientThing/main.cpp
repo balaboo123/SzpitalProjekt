@@ -1,3 +1,8 @@
+// Plik: Pharmacy.cpp
+// Autor: Miko³aj Lisowski
+// Data: 04.11.2024
+// Opis: Plik ³¹cz¹cy projekt szpitalu w ca³oœæ, który umo¿liwia u¿ytkownikowi
+
 #include <iostream>
 #include <vector>
 
@@ -27,8 +32,8 @@ int main()
 
         switch (wybor) {
         case 1: {
+            cout << "Podaj iloœæ dni zabiegu:";
             break;
-
         }
         case 2: {
 
@@ -47,7 +52,9 @@ int main()
         }
         }
     } while (wybor != 4);
-
+    
+    cout << endl;
+    patient.showTotalCost();
     cout << "Wypisano pacjenta - koniec programu.\n";
 
     return 0;

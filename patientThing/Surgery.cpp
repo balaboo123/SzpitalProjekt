@@ -19,3 +19,17 @@ unordered_map<string, double> treatments = {
     {"wybicie zebow", 4.99},
     {"wyrwanie wlosow", 49.99},
 };
+
+int Surgery::TREATMENT_AMOUNT = treatments.size();
+
+Surgery::Surgery() {
+}
+
+void Surgery::showTreatments()
+{
+    // Pokaz wszystkie zabiegi, wraz z ich ID
+}
+
+void Surgery::updatePatientCost(PatientAccount& patient, int treatmentId)
+{
+}

@@ -1,10 +1,11 @@
 // Plik: Pharmacy.cpp
-// Autor: Miko³aj Lisowski
+// Autor: Mikolaj Lisowski
 // Data: 04.11.2024
-// Opis: Plik ³¹cz¹cy projekt szpitalu w ca³oœæ, który umo¿liwia u¿ytkownikowi
+// Opis: Plik laczacy projekt szpitalu w calosc, ktory umozliwia uzytkownikowi wyliczenie ilosc dni 
 
 #include <iostream>
 #include <vector>
+#include <string>
 
 #include "Surgery.h"
 #include "Pharmacy.h"
@@ -17,29 +18,65 @@ int main()
     setlocale(LC_CTYPE, "Polish");
 
     Pharmacy pharmacy;
-    PatientAccount patient;
+    Surgery surgery;
 
-    int wybor;
+    cout << "<-------------------------------------------------->\n";
+    cout << "<---<   Program SSS: [Super Szpital Szkolny]   >--->\n";
+    cout << "<------------------<   WITAMY   >------------------>\n";
+
+    cout << "\nPodaj imie pacjenta: ";
+    string name;
+    getline(cin, name);
+
+    PatientAccount patient(name);
+
+    int choice;
     do {
         cout << "========  MENU  ========\n";
-        cout << "1) Ustaw iloœæ dni zabiegu\n";
+        cout << "1) Ustaw ilosc dni zabiegu\n";
         cout << "2) Wybierz zabieg\n";
         cout << "3) Wybierz lek\n";
         cout << "4) Wypisz pacjenta\n";
 
-        cout << "Wybór: ";
-        cin >> wybor;
+        cout << "Wybor: ";
+        cin >> choice;
 
-        switch (wybor) {
+        switch (choice) {
         case 1: {
-            cout << "Podaj iloœæ dni zabiegu:";
+            int days;
+
+            do {
+                cout << "-> Podaj ilosc dni zabiegu: ";
+                cin >> days;
+            } while (days <= 0);
+
+            patient.setDays(days);
+            
             break;
         }
         case 2: {
+            Surgery::showTreatments();
+
+            int treatmentId;
+            do {
+                cout << "-> Wybierz, ktory zabieg ma pacjent (numer zabiegu): ";
+                cin >> treatmentId;
+            } while (treatmentId < 1 || treatmentId > Surgery::TREATMENT_AMOUNT);
+
+            surgery.updatePatientCost(patient, treatmentId);
 
             break;
         }
         case 3: {
+            Pharmacy::showMedicine();
+
+            int medicineId;
+            do {
+                cout << "-> Wybierz, ktory lek otrzymuje pacjent (numer leku): ";
+                cin >> medicineId;
+            } while (medicineId < 1 || medicineId > Pharmacy::MEDICINE_AMOUNT);
+
+            pharmacy.updatePatientCost(patient, medicineId);
 
             break;
         }
@@ -48,14 +85,26 @@ int main()
             break;
         }
         default: {
-            cout << "Niepoprawny wybór.\n";
+            cout << "Niepoprawny wybor.\n";
         }
         }
-    } while (wybor != 4);
+
+        patient.updateTotalCost();
+
+        if (choice == 4) {
+            // wypisanie pacjenta
+            std::cout << "\nOstateczne informacje pacjenta \"" << name << "\": ";
+            patient.showFinalDetails();
+            break;
+        }
+
+        std::cout << "\nObecne informacje pacjenta \"" << name << "\": ";
+        patient.showDetails();
+        std::cout << endl;
+    } while (choice != 4);
     
     cout << endl;
-    patient.showTotalCost();
-    cout << "Wypisano pacjenta - koniec programu.\n";
+    cout << "\n<-----  Wypisano pacjenta - koniec programu.  ----->";
 
     return 0;
 }

@@ -19,3 +19,18 @@ unordered_map<string, double> medicine = {
     {"lek4", 4.99},
     {"lek5", 49.99},
 };
+
+int Pharmacy::MEDICINE_AMOUNT = medicine.size();
+
+Pharmacy::Pharmacy()
+{
+}
+
+void Pharmacy::showMedicine()
+{
+    // Pokaz wszystkie medycyny, wraz z ich ID
+}
+
+void Pharmacy::updatePatientCost(PatientAccount& patient, int medicineId)
+{
+}

@@ -3,28 +3,26 @@
 // Data: 18.11.2024
 // Opis: Definicja klasy Surgery, która przechowuje 5 zabiegów chirurgicznych oraz zmienia koszt leczenia przechowywany w PatientAccount.
 
+// Niech klasa Surgery prechowuje koszt co najmniej piêciu ró¿nych zabiegów chirurgicznych i odpowiednio zmienia koszt leczenia przechowywany w klasie PatientAccount.
 #pragma once
 
-// Niech klasa Surgery prechowuje koszt co najmniej piêciu ró¿nych zabiegów chirurgicznych i odpowiednio zmienia koszt leczenia przechowywany w klasie PatientAccount.
+#include "PatientAccount.h"
 
-#include <iostream>
 #include <map>
 #include <unordered_map>
-
-#include "PatientAccount.h"
 
 using namespace std;
 
 // Zabieg chirurgiczny (pacjent, nazwa zabiegu)
 class Surgery {
 private:
-    PatientAccount patient;
-    string treatment; // treatment name, must be within 'treatments'
-
+    string treatment; // nazwa zabiegu, musi byc jedna z tych w "treatment"
 
 public:
-    Surgery(PatientAccount patient, string treatment)
-        : patient(patient), treatment(treatment) {
+    Surgery();
 
-    }
+    static int TREATMENT_AMOUNT;
+    static void showTreatments();
+
+    void updatePatientCost(PatientAccount& patient, int treatmentId);
 };

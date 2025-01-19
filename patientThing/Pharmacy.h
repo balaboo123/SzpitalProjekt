@@ -3,15 +3,13 @@
 // Data: 18.11.2024
 // Opis: Definicja klasy Pharmacy, która przechowuje koszt 5 leków, oraz zmienia koszt leczenia w PatientAccount.
 
+// Niech klasa Pharmacy przechowuje koszt co najmniej piêciu ró¿nych leków i odpowiednio zmienia koszt leczenia przechowywany w klasie PatientAccount.
 #pragma once
 
-// Niech klasa Pharmacy przechowuje koszt co najmniej piêciu ró¿nych leków i odpowiednio zmienia koszt leczenia przechowywany w klasie PatientAccount.
+#include "PatientAccount.h"
 
-#include <iostream>
 #include <vector>
 #include <unordered_map>
-
-#include "PatientAccount.h"
 
 using namespace std;
 
@@ -20,5 +18,10 @@ private:
 
 
 public:
+	Pharmacy();
 
+	static int MEDICINE_AMOUNT;
+	static void showMedicine();
+
+	void updatePatientCost(PatientAccount& patient, int medicineId);
 };

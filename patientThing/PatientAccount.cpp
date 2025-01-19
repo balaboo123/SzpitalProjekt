@@ -5,13 +5,41 @@
 
 #include "PatientAccount.h"
 
-void PatientAccount::updateTotalCost(double amount)
+int PatientAccount::DAILY_COST = 50;
+
+// konstruktor
+PatientAccount::PatientAccount(string name) : name(name)
 {
 }
 
-void PatientAccount::showTotalCost()
+void PatientAccount::updateTotalCost()
 {
-	// Komunikat koñcowy, wyœwietlaj¹cy ostateczny koszt + inne informacje na temat pacjenta (np. iloœæ dni)
+	// Ustawienie totalCost zgodnie z liczba dni oraz kosztem za kazdy dzien
 }
 
-int PatientAccount::DAILY_COST = 0;
+// uzywane przez Surgery
+void PatientAccount::setSurgeryCost(double cost)
+{
+}
+
+// uzywane przez Pharmacy
+void PatientAccount::setMedicineCost(double cost)
+{
+}
+
+void PatientAccount::showDetails()
+{
+	// Komunikat po wyborze menu, wyswietla obecna ilosc dni, i jakie zabiegi
+}
+
+void PatientAccount::showFinalDetails()
+{
+	// Komunikat koñcowy, wyœwietlaj¹cy normalne detale + ostateczny koszt
+	this->showDetails();
+
+}
+
+void PatientAccount::setDays(int amount)
+{
+}
+

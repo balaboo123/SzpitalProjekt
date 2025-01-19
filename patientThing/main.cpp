@@ -104,7 +104,7 @@ int main()
     } while (choice != 4);
     
     cout << endl;
-    cout << "\n<-----  Wypisano pacjenta - koniec programu.  ----->";
+    cout << "<-----  Wypisano pacjenta - koniec programu.  ----->\n";
 
     return 0;
 }

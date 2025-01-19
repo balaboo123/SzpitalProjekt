@@ -4,6 +4,7 @@
 // Opis: Rozwiniêcie funkcji klasy Surgery, która przechowuje 5 zabiegów chirurgicznych oraz zmienia koszt leczenia przechowywany w PatientAccount.
 
 #include "Surgery.h"
+#include <iomanip>
 
 map<int, string> treatmentIds = {
     {1, "lobotomia"},
@@ -14,7 +15,7 @@ map<int, string> treatmentIds = {
 };
 map<string, double> treatments = {
     {"lobotomia", 19999.99}, // sekretny zabieg
-    {"powiekszanie piersi", 12499.99},
+    {"powiekszanie piersi", 1249.99},
     {"mezoterapia glowy", 349.99},
     {"wybicie zebow", 4.99},
     {"wyrwanie wlosow", 49.99},
@@ -25,11 +26,23 @@ int Surgery::TREATMENT_AMOUNT = treatments.size();
 Surgery::Surgery() {
 }
 
+//wypisywanie wszystkich mo¿liwych zabiegów wraz z kosztem
 void Surgery::showTreatments()
 {
-    // Pokaz wszystkie zabiegi, wraz z ich ID
+    cout << "\nDostepne zabiegi:\n";
+    for (const auto& treatment : treatmentIds) {
+        cout << treatment.first << ") " << treatment.second << " - " << fixed << setprecision(2) << treatments[treatment.second] << " z³\n";
+    }
 }
-
+// aktualizowanie kosztu leczenia w kwestii zabiegów
 void Surgery::updatePatientCost(PatientAccount& patient, int treatmentId)
 {
+    if (treatmentIds.find(treatmentId) != treatmentIds.end()) {
+        string treatmentName = treatmentIds[treatmentId];
+        if (treatments.find(treatmentName) != treatments.end()) {
+            double cost = treatments[treatmentName];
+            patient.setSurgeryCost(cost);
+        }
+    }
+    else { cout << "Bledny identyfikator zabiegu.\n"; }
 }

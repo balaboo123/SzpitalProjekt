@@ -43,5 +43,5 @@ void Pharmacy::updatePatientCost(PatientAccount& patient, int medicineId)
             patient.setMedicineCost(cost);
         }
     }
-    else { cout << "B³êdny identyfikator leku.\n"; }
+    else { cout << "Bledny identyfikator leku.\n"; }
 }

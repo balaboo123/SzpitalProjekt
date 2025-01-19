@@ -59,7 +59,7 @@ int main()
 
             int treatmentId;
             do {
-                cout << "-> Wybierz, ktory zabieg ma pacjent (numer zabiegu): ";
+                cout << "-> Wybierz zabieg pacjenta (numer zabiegu): ";
                 cin >> treatmentId;
             } while (treatmentId < 1 || treatmentId > Surgery::TREATMENT_AMOUNT);
 
@@ -72,7 +72,7 @@ int main()
 
             int medicineId;
             do {
-                cout << "-> Wybierz, ktory lek otrzymuje pacjent (numer leku): ";
+                cout << "-> Wybierz lek pacjenta (numer leku): ";
                 cin >> medicineId;
             } while (medicineId < 1 || medicineId > Pharmacy::MEDICINE_AMOUNT);
 

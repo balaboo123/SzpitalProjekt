@@ -25,6 +25,7 @@ void PatientAccount::setSurgeryCost(double cost)
 // uzywane przez Pharmacy
 void PatientAccount::setMedicineCost(double cost)
 {
+	cout << cost << endl;
 }
 
 void PatientAccount::showDetails()

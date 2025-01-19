@@ -32,8 +32,8 @@ int main()
 
     int choice;
     do {
-        cout << "========  MENU  ========\n";
-        cout << "1) Ustaw ilosc dni zabiegu\n";
+        cout << "=========  MENU  =========\n";
+        cout << "1) Ustaw ilosc dni zabiegu [cena za dzien: " << PatientAccount::DAILY_COST << " zl]\n";
         cout << "2) Wybierz zabieg\n";
         cout << "3) Wybierz lek\n";
         cout << "4) Wypisz pacjenta\n";

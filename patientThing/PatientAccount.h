@@ -1,5 +1,5 @@
 // Plik: PatientAccount.h
-// Autor: 
+// Autor: Bartosz Misiak
 // Data: 18.11.2024
 // Opis: Definicja klasy PatientAccount, która przechowuje dane dotycz¹ce kosztów leczenia pacjenta. 
 
@@ -17,8 +17,8 @@ private:
     double totalCost; // ca³kowity koszt leczenia
     int totalDays;
 
-    double surgeryCost = 0;
-    double medicineCost = 0;
+    double surgeryCost;
+    double medicineCost;
 
 public:
     PatientAccount(string name);

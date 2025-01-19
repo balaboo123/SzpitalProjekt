@@ -1,5 +1,5 @@
 // Plik: Pharmacy.h
-// Autor: 
+// Autor: Patryk Pilichowski
 // Data: 18.11.2024
 // Opis: Definicja klasy Pharmacy, która przechowuje koszt 5 leków, oraz zmienia koszt leczenia w PatientAccount.
 
